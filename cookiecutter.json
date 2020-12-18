@@ -2,5 +2,6 @@
     "package_name": "kexplo-pytemplate",
     "version": "0.1.0",
     "author_name": "Chanwoong Kim",
-    "author_email": "me@chanwoong.kim"
+    "author_email": "me@chanwoong.kim",
+    "open_source_license": ["MIT License", "BSD 3-Clause License", "No License"]
 }
