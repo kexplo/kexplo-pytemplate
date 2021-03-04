@@ -13,7 +13,7 @@ test: poetry.lock
 
 lint: poetry.lock
 	poetry run black --line-length=79 --check --diff $(CODE)
-	flake8 {{cookiecutter.package_name}} --count --show-source --statistics
+	poetry run flake8 {{cookiecutter.package_name}} --count --show-source --statistics
 
 format: poetry.lock
 	poetry run black --line-length=79 $(CODE)
