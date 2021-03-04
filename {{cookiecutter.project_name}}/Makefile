@@ -2,17 +2,21 @@
 
 CODE = {{cookiecutter.package_name}}
 
+poetry.lock:
+	$(MAKE) init
+
 init:
 	poetry install
 
-test:
+test: poetry.lock
 	poetry run pytest
 
-lint:
+lint: poetry.lock
 	poetry run black --line-length=79 --check --diff $(CODE)
+	flake8 {{cookiecutter.package_name}} --count --show-source --statistics
 
-format:
+format: poetry.lock
 	poetry run black --line-length=79 $(CODE)
 
-build:
+build: poetry.lock
 	poetry build
