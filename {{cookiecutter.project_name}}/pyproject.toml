@@ -8,6 +8,8 @@ authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^1.5.6"
+isort = "^5.8.0"
 black = "^20.8b1"
 mypy = "^0.790"
 ptpython = "^3.0.7"
@@ -21,6 +23,13 @@ flake8-bandit = "^2.1.2"
 flake8-bugbear = "^20.11.1"
 pep8-naming = "^0.11.1"
 pytest = "^6.2.1"
+
+[tool.isort]
+profile = "google"
+force_single_line = "False"
+
+[tool.autopep8]
+max_line_length = 79
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = '{{cookiecutter.package_name}}.__main__:run_cli'
