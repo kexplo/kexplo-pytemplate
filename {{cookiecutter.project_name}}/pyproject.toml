@@ -29,7 +29,7 @@ profile = "google"
 force_single_line = "False"
 
 [tool.autopep8]
-max_line_length = 79
+max_line_length = 160
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = '{{cookiecutter.package_name}}.__main__:run_cli'
