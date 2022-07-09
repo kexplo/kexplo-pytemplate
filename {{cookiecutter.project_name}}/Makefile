@@ -1,22 +1,26 @@
-.PHONY: init test lint format build
+.PHONY: init test lint format build mypy
 
 CODE = {{cookiecutter.package_name}}
+PYVENVCFG = .venv/pyvenv.cfg
 
-poetry.lock:
+$(PYVENVCFG):
 	$(MAKE) init
 
 init:
 	poetry install
 
-test: poetry.lock
+test: $(PYVENVCFG)
 	poetry run pytest
 
-lint: poetry.lock
+lint: $(PYVENVCFG)
+	poetry run flake8 $(CODE) --count --show-source --statistics
 	poetry run black --check --diff $(CODE)
-	poetry run flake8 {{cookiecutter.package_name}} --count --show-source --statistics
 
-format: poetry.lock
+format: $(PYVENVCFG)
 	poetry run black $(CODE)
 
-build: poetry.lock
+build: $(PYVENVCFG)
 	poetry build
+
+mypy: $(PYVENVCFG)
+	poetry run mypy $(CODE)
