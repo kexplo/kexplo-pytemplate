@@ -6,6 +6,7 @@ authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+typer = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "*"
@@ -36,7 +37,7 @@ max_line_length = 160
 line-length = 160
 
 [tool.poetry.scripts]
-{{cookiecutter.project_name}} = '{{cookiecutter.package_name}}.__main__:run_cli'
+{{cookiecutter.project_name}} = '{{cookiecutter.package_name}}.__main__:app'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
