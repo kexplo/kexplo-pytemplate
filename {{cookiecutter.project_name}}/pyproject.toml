@@ -14,16 +14,8 @@ isort = "*"
 black = "*"
 mypy = "*"
 ptpython = "3.*"
-flake8 = "*"
-flake8-import-order = "*"
-flake8-pytest-style = "*"
-flake8-logging-format = "*"
-flake8-comprehensions = "*"
-flake8-builtins = "*"
-flake8-bandit = "*"
-flake8-bugbear = "*"
-pep8-naming = "*"
 pytest = "6.*"
+ruff = "*"
 
 [tool.isort]
 profile = "google"
@@ -32,6 +24,9 @@ line_length = 160
 
 [tool.autopep8]
 max_line_length = 160
+
+[tool.ruff]
+line-length = 160
 
 [tool.black]
 line-length = 160
