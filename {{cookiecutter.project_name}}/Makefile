@@ -13,8 +13,8 @@ test: $(PYVENVCFG)
 	poetry run pytest
 
 lint: $(PYVENVCFG)
-	poetry run flake8 $(CODE) --count --show-source --statistics
 	poetry run black --check --diff $(CODE)
+	poetry run ruff check $(CODE)
 
 format: $(PYVENVCFG)
 	poetry run black $(CODE)
